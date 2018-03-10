@@ -1,3 +1,4 @@
+import { InstructionsPage } from './../instructions/instructions';
 import { ProfilePage } from './../profile/profile';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -24,8 +25,8 @@ export class HomePage {
 
   addBlood(event) {
 
-    this.navCtrl.setRoot(HomePage);
-    this.navCtrl.push(MapPage);
+    //this.navCtrl.setRoot(HomePage);
+    this.navCtrl.push(InstructionsPage);
 
   }
 

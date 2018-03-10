@@ -14,6 +14,10 @@
 
 
 <ion-content padding>
+    <input 
+    #query
+    (keyup)="filter(query.value)"
+    type="text" class="form-control" placeholder="Search...">
     <ion-list>
         <button ion-item *ngFor="let i of c">
           {{ i }}
