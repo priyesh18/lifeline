@@ -1,3 +1,4 @@
+import { ListPage } from './../list/list';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -26,6 +27,7 @@ export class MapPage {
   lat: number=19.0760;
   lng: number=72.8777;
   locationChosen=false;
+  listarray=[];
 
   @ViewChild('map') mapElement: ElementRef;
 
@@ -70,16 +72,18 @@ export class MapPage {
     navigator.geolocation.getCurrentPosition((location) => {
       console.log(location);
       map = new google.maps.Map(this.mapElement.nativeElement, {
-        center: {lat: location.coords.latitude, lng: location.coords.longitude},
-        zoom: 15
-      });
+        center: {lat: 19.0813, lng: 72.8887
+        },
+        zoom: 14
+      }); 
+      this.createM( 19.0813,72.8887);
   
       infowindow = new google.maps.InfoWindow();
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
-        location: {lat: location.coords.latitude, lng: location.coords.longitude},
+        location: {lat: 19.0813, lng:72.8887 },
         radius: 1000,
-        type: ['hospital']
+        type: ['hospital'],
       }, (results,status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
@@ -90,11 +94,26 @@ export class MapPage {
     }, (error) => {
       console.log(error);
     }, options);
-    var myplace = {lat: -33.8665, lng: 151.1956};
+    //var myplace = {lat: -33.8665, lng: 151.1956};
   }
+  // addMarker()
+  // {
+  //   var marker=new google.maps.Marker({
+  //     map:map,
+  //     animation:'DROP',
+  //     position: {lat: 19.0813, lng:72.8887 },
+      
+  //     icon:'blue'
+
+  //   });
+  //   console.log()
+  // }
   createMarker(place) {
     console.log(place);
     var placeLoc = place.geometry.location;
+    var hosname=place.name;
+    console.log(hosname);
+    this.listarray.push(hosname);
     var marker = new google.maps.Marker({
       map: map,
       position: placeLoc
@@ -104,6 +123,25 @@ export class MapPage {
       infowindow.setContent(place.name);
       infowindow.open(map, this);
     });
+  }
+  createM(l,lo) {
+    var placeLoc={lat :l,lng :lo};
+    console.log(placeLoc);
+    var marker = new google.maps.Marker({
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+
+      position: placeLoc
+    });
+  
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map, this);
+    });
+  }
+
+  listShow()
+  {
+    this.navCtrl.push(ListPage,{array:this.listarray});
   }
   
 

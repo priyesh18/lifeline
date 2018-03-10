@@ -1,3 +1,4 @@
+import { ListPage } from './../pages/list/list';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { ProfilePage } from '../pages/profile/profile';
     MyApp,
     HomePage,
     MapPage,
-    ProfilePage
+    ProfilePage,
+    ListPage
   ],
   
   imports: [
@@ -30,6 +32,7 @@ import { ProfilePage } from '../pages/profile/profile';
     HomePage,
     MapPage,
     ProfilePage,
+    ListPage
   ],
   providers: [
     Geolocation,
