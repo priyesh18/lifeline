@@ -1,1 +1,30 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+          
+
+        <ion-title ></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="openPage(homePage)">
+          Blood Banks
+        </button>
+        <button ion-item >
+          Nearest Blood Bank
+        </button>
+        <button ion-item (click)="openPage()">
+          My Profile
+        </button>
+        <button ion-item (click)="closeMenu()">
+          Edit Profile
+        </button>
+        <button ion-item (click)="closeMenu()">
+            Logout
+              </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+<ion-nav [root]="rootPage" #content></ion-nav>
