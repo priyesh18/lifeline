@@ -24,8 +24,8 @@ let options = {
   templateUrl: 'map.html',
 })
 export class MapPage {
-  lat: number=19.0760;
-  lng: number=72.8777;
+  lat;
+  lng;
   locationChosen=false;
   listarray=[];
 
