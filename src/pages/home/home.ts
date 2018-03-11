@@ -17,8 +17,17 @@ import { SearchPage } from '../search/search';
 export class HomePage {
   scannedCode = null;
   activeCodes = null;
+  rewardVal;
   constructor(public navCtrl: NavController,private barcodeScanner:BarcodeScanner, private tkservice: TokenServiceProvider, private alertCtrl: AlertController,private authService: AuthService) {
 
+  }
+  ionViewWillEnter()
+  {
+    this.tkservice.getToken().subscribe((data) => {
+      console.log(data);
+      this.activeCodes = data;
+    })
+    //console.log(this.activeCodes);
   }
 
   addBlood(event) {
@@ -38,7 +47,9 @@ export class HomePage {
  {
    this.authService.getReward().subscribe((data) => {
      console.log(data);
-     this.presentAlert(data.reward);
+     this.rewardVal = data.reward;
+     this.presentAlert("Your coins: "+data.reward);
+     //this.presentAlert(this.rewardVal);
    })
  }
  scanCode() {
@@ -57,7 +68,9 @@ checkToken()
         {
           this.tkservice.deleteToken(element.$key);
           console.log(element.$key);
+          this.updateReward();
           this.presentAlert("You are rewarded");
+          //this.presentAlert(this.rewardVal);
           bool = false;
           return false;
         }
@@ -68,6 +81,7 @@ checkToken()
       console.log('popup');
       this.presentAlert("Incorrect");
     }
+
   }
   presentAlert(data) {
     let alert = this.alertCtrl.create({
@@ -75,5 +89,28 @@ checkToken()
       buttons: ['Dismiss']
     });
     alert.present();
+  }
+  updateReward()
+  {
+    this.authService.getReward().subscribe((data) => {
+      console.log(data);
+      this.rewardVal = data.reward;
+      //this.presentAlert("Your coins: "+data.reward);
+      //this.presentAlert(this.rewardVal);
+      this.rewardVal += 50;
+    this.presentAlert("Your coins: "+this.rewardVal);
+    });
+    
+ 
+    
+      
+      
+    
+    // this.authService.updateReward(this.rewardVal).then((data) => {
+    //   this.presentAlert(data);
+    //   this.presentAlert(this.rewardVal);
+      
+    // })
+    // this.presentAlert(this.rewardVal);
   }
 }

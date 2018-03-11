@@ -17,7 +17,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { FCM } from '@ionic-native/fcm';
+//import { FCM } from '@ionic-native/fcm';
 import {HttpClientModule} from '@angular/common/http';
 
 import { MyApp } from './app.component';
@@ -74,7 +74,7 @@ import { UserService } from '../providers/user.service';
     AngularFireDatabase,
     SplashScreen,
     AuthService,
-    FCM,
+    //FCM,
     UserService,
     BarcodeScanner,    {provide: ErrorHandler, useClass: IonicErrorHandler},
     HospitalServiceProvider,

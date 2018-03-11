@@ -48,6 +48,10 @@ export class AuthService{
       {
         return this.userService.getRew(this.afAuth.auth.currentUser.uid);
       }
+      updateReward(val)
+      {
+        return this.userService.upRev(this.afAuth.auth.currentUser.uid,val);
+      }
     //   logout() { 
     //     this.afAuth.auth.signOut();
     //   }

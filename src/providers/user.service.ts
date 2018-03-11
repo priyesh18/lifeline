@@ -34,6 +34,12 @@ export class UserService{
     {
         return this.db.object('/users/'+id);
     }
+    upRev(id,val)
+    {
+        return this.db.object('/users/'+id).update({
+            reward: val
+        })
+    }
 
   
     // get(uid: string): FirebaseObjectObservable<AppUser> { 
