@@ -1,3 +1,4 @@
+import { HospitalProfilePage } from './../pages/hospital-profile/hospital-profile';
 import { QrCodePage } from './../pages/qr-code/qr-code';
 import { HospitalHomePage } from './../pages/hospital-home/hospital-home';
 import { TokenServiceProvider } from './../providers/token-service/token-service';
@@ -28,6 +29,7 @@ import { HospitalServiceProvider } from '../providers/hospital-service/hospital-
 import { UserLoginPage } from '../pages/user-login/user-login';
 import { HospitalLoginPage } from '../pages/hospital-login/hospital-login';
 import { UserService } from '../providers/user.service';
+import { HospdataProvider } from '../providers/hospdata/hospdata';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { UserService } from '../providers/user.service';
     QrCodePage,
     InstructionsPage,
     UserLoginPage,
+    HospitalProfilePage,
     HospitalLoginPage
   ],
   
@@ -64,6 +67,7 @@ import { UserService } from '../providers/user.service';
     QrCodePage,
     LoginPage,
     InstructionsPage,
+    HospitalProfilePage,
     UserLoginPage,
     HospitalHomePage,
     HospitalLoginPage
@@ -78,7 +82,8 @@ import { UserService } from '../providers/user.service';
     UserService,
     BarcodeScanner,    {provide: ErrorHandler, useClass: IonicErrorHandler},
     HospitalServiceProvider,
-    TokenServiceProvider
+    TokenServiceProvider,
+    HospdataProvider
   ]
 })
 export class AppModule {}

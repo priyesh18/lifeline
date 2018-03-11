@@ -1,3 +1,4 @@
+import { HospitalProfilePage } from './../hospital-profile/hospital-profile';
 import { ProfilePage } from './../profile/profile';
 import { HospitalLoginPage } from './../hospital-login/hospital-login';
 import { Component } from '@angular/core';
@@ -24,7 +25,14 @@ export class LoginPage {
   onSubmit(data) {
     //console.log(data);
     this.authservice.login(data.email,data.password,data.role);
-    this.navCtrl.push(ProfilePage);
+    console.log(data.role);
+    if(data.role != "users")
+    {
+      this.navCtrl.push(HospitalProfilePage);
+    }
+    else{
+      this.navCtrl.push(ProfilePage);
+    }
     
 
   }

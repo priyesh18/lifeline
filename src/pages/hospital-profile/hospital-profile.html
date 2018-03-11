@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hospital Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onAddHospital(f.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>name</ion-label>
+        <ion-input ngModel type="text" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>address</ion-label>
+        <ion-input ngModel type="text" name="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>contact</ion-label>
+        <ion-input ngModel type="number" name="contact"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit">Save</button>
+  </form>
+  <form #ff="ngForm" (ngSubmit)="onAddBlood(ff.value)">
+    <ion-grid>
+      <ion-row>
+          <ion-col>
+            <ion-item>
+                <ion-label floating>a+</ion-label>
+                <ion-input ngModel type="number" name="a+"></ion-input>
+            </ion-item>
+              
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label floating>a-</ion-label>
+                  <ion-input ngModel type="number" name="a-"></ion-input>
+              </ion-item>
+              
+            </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+            <ion-item>
+                <ion-label floating>b+</ion-label>
+                <ion-input ngModel type="number" name="b+"></ion-input>
+            </ion-item>
+              
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label floating>b-</ion-label>
+                  <ion-input ngModel type="number" name="b-"></ion-input>
+              </ion-item>  
+            </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+            <ion-item>
+                <ion-label floating>ab+</ion-label>
+                <ion-input ngModel type="number" name="ab+"></ion-input>
+            </ion-item>
+              
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label floating>ab-</ion-label>
+                  <ion-input ngModel type="number" name="ab-"></ion-input>
+              </ion-item>  
+            </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <ion-item>
+                <ion-label floating>O+</ion-label>
+                <ion-input ngModel type="number" name="O+"></ion-input>
+            </ion-item>
+              
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                  <ion-label floating>O-</ion-label>
+                  <ion-input ngModel type="number" name="O-"></ion-input>
+              </ion-item>  
+            </ion-col>
+      </ion-row>
+       
+    </ion-grid>
+    
+    <button ion-button type="submit">Save</button>
+  </form>
+</ion-content>
