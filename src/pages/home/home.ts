@@ -1,3 +1,4 @@
+import { MapPage } from './../map/map';
 import { AuthService } from './../../providers/auth.service';
 import { UserService } from './../../providers/user.service';
 import { TokenServiceProvider } from './../../providers/token-service/token-service';
@@ -7,7 +8,6 @@ import { ProfilePage } from './../profile/profile';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
-import { MapPage } from '../map/map';
 import { SearchPage } from '../search/search';
 
 @Component({
@@ -40,8 +40,8 @@ export class HomePage {
 
   findBlood(event) {
 
-    this.navCtrl.setRoot(HomePage);
-    this.navCtrl.push(SearchPage);
+    //this.navCtrl.setRoot(HomePage);
+    this.navCtrl.push(MapPage);
 }
  myRewards()
  {
@@ -68,7 +68,7 @@ checkToken()
         {
           this.tkservice.deleteToken(element.$key);
           console.log(element.$key);
-          this.updateReward();
+          
           this.presentAlert("You are rewarded");
           //this.presentAlert(this.rewardVal);
           bool = false;
@@ -80,6 +80,9 @@ checkToken()
     {
       console.log('popup');
       this.presentAlert("Incorrect");
+    }
+    else {
+      this.updateReward();
     }
 
   }
@@ -99,7 +102,13 @@ checkToken()
       //this.presentAlert(this.rewardVal);
       this.rewardVal += 50;
     this.presentAlert("Your coins: "+this.rewardVal);
-    });
+    
+    })
+    setTimeout(() => {
+      this.authService.updateReward(this.rewardVal).then((data) => {
+      })
+    }, 2000);
+    
     
  
     
