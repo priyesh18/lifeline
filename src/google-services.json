@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "641696884516",
+    "firebase_url": "https://hospital-1641d.firebaseio.com",
+    "project_id": "hospital-1641d",
+    "storage_bucket": "hospital-1641d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641696884516:android:8a25dffab3966fac",
+        "android_client_info": {
+          "package_name": "io.lifeline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641696884516-6a0tftrkg3v2gtd7kndbh5407dh1ippa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZlqJvVeLGjF28ej0ckg-crWTBBEADxC0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

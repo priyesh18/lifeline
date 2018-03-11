@@ -15,9 +15,14 @@ Home
   <ion-grid>
       <ion-row>
           <ion-col text-center>
-            <button (click)="addProfile()" color=""  id="be" ion-button  block outline>Add Profile</button>
+            <button (click)="scanCode()" color=""  id="be" ion-button  block outline>Scan Code</button>
           </ion-col>
         </ion-row>
+        <ion-row>
+            <ion-col text-center>
+              <button (click)="myRewards()" color=""  id="be" ion-button  block outline>My Rewards</button>
+            </ion-col>
+          </ion-row>
     
     <ion-row>
       <ion-col text-center>
@@ -29,9 +34,7 @@ Home
         <button (click)="findBlood($event)" color="danger" ion-button block outline>Find Donor</button>
       </ion-col>
     </ion-row>
-    <ion-fab bottom right>
-    <button ion-fab (click)="map($event)" ><ion-icon name="locate"></ion-icon></button>
-    </ion-fab>
+    
   </ion-grid>
   
 

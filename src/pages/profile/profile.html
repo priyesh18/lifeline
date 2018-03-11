@@ -14,23 +14,24 @@
 
 
 <ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
   <ion-list>
       <ion-item>
           <ion-label  stacked>Name</ion-label>
-          <ion-input type="tel" placeholder="XYZ"></ion-input>
+          <ion-input type="tel" name="name"a ngModel placeholder="XYZ"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label  stacked>Contact</ion-label>
-            <ion-input type="email" placeholder="8888888888"></ion-input>
+            <ion-input type="number" name="contact" ngModel placeholder="8888888888"></ion-input>
           </ion-item>
         
         <ion-item>
             <ion-label  stacked>Email</ion-label>
-            <ion-input type="email" placeholder="Email"></ion-input>
+            <ion-input type="email"name="email" ngModel placeholder="Email"></ion-input>
           </ion-item>
           <ion-item>
               <ion-label stacked>Gender</ion-label>
-              <ion-select [(ngModel)]="ggroup">
+              <ion-select name="gender" ngModel="ggroup">
                   <ion-option value="m">Male</ion-option>
                   <ion-option value="f">Female</ion-option>
                   <ion-option value="o">Other</ion-option>
@@ -39,22 +40,20 @@
             </ion-item>
           <ion-item>
               <ion-label stacked>Blood Group</ion-label>
-              <ion-select [(ngModel)]="bgroup">
-                <ion-option value="nes">A+</ion-option>
-                <ion-option value="n64">B+</ion-option>
-                <ion-option value="ps">AB+</ion-option>
-                <ion-option value="genesis">O+</ion-option>
-                <ion-option value="saturn">AB-</ion-option>
-                <ion-option value="snes">O-</ion-option>
+              <ion-select name="bloodgrp" ngModel="bgroup">
+                <ion-option value="a+">A+</ion-option>
+                <ion-option value="b+">B+</ion-option>
+                <ion-option value="ab+">AB+</ion-option>
+                <ion-option value="o+">O+</ion-option>
+                <ion-option value="ab-">AB-</ion-option>
+                <ion-option value="o-">O-</ion-option>
               </ion-select>
             </ion-item>
-            
+          
           
 
-          <ion-item>
-              <ion-textarea placeholder="Enter a description"></ion-textarea>
-            </ion-item>
-            <button ion-button outline round block color="secondary" (click)="closeMenu()">
+         
+            <button type="submit" ion-button outline round block color="secondary">
                 Add
                   </button>
     
@@ -62,5 +61,5 @@
         
       
   </ion-list>
-
+</form>
 </ion-content>

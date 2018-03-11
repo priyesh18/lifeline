@@ -24,6 +24,17 @@ export class UserService{
         }
         
     }
+    brave(event,value)
+    {
+        this.db.object('/users/'+event).update({
+            reward:value
+        })
+    }
+    getRew(id)
+    {
+        return this.db.object('/users/'+id);
+    }
+
   
     // get(uid: string): FirebaseObjectObservable<AppUser> { 
     //   return this.db.object('/users/' + uid);

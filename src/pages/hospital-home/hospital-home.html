@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>HospitalHome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <!-- <ion-row>
+            <ion-col text-center>
+              <button (click)="scanCode()" color=""  id="be" ion-button  block outline>Scan Code</button>
+            </ion-col>
+          </ion-row> -->
+          <ion-row>
+              <ion-col text-center>
+                <button [navPush]="generatePage" ion-button  block outline>Generate Code</button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-label >Emergency Broadcast</ion-label>
+                  <ion-input type='text' [(ngModel)]="message"></ion-input>
+              </ion-col>
+            </ion-row>
+      
+      <ion-row>
+        <ion-col text-center>
+          <button (click)="emergency()" color="secondary"  ion-button  block outline>Emergency</button>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-col text-center>
+          <button (click)="findBlood($event)" color="danger" ion-button block outline>Find Donor</button>
+        </ion-col>
+      </ion-row> -->
+      
+    </ion-grid>
+</ion-content>

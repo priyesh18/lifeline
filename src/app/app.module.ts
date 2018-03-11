@@ -1,3 +1,6 @@
+import { QrCodePage } from './../pages/qr-code/qr-code';
+import { HospitalHomePage } from './../pages/hospital-home/hospital-home';
+import { TokenServiceProvider } from './../providers/token-service/token-service';
 import { InstructionsPage } from './../pages/instructions/instructions';
 import { AuthService } from './../providers/auth.service';
 import { LoginPage } from './../pages/login/login';
@@ -12,7 +15,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { FCM } from '@ionic-native/fcm';
+import {HttpClientModule} from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -29,8 +35,10 @@ import { UserService } from '../providers/user.service';
     HomePage,
     MapPage,
     ProfilePage,
+    HospitalHomePage,
     ListPage,
     LoginPage,
+    QrCodePage,
     InstructionsPage,
     UserLoginPage,
     HospitalLoginPage
@@ -38,9 +46,11 @@ import { UserService } from '../providers/user.service';
   
   imports: [
     BrowserModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,  
+    AngularFireAuthModule, 
+    NgxQRCodeModule, 
     IonicModule.forRoot(MyApp),
 
   ],
@@ -51,9 +61,11 @@ import { UserService } from '../providers/user.service';
     MapPage,
     ProfilePage,
     ListPage,
+    QrCodePage,
     LoginPage,
     InstructionsPage,
     UserLoginPage,
+    HospitalHomePage,
     HospitalLoginPage
   ],
   providers: [
@@ -62,9 +74,11 @@ import { UserService } from '../providers/user.service';
     AngularFireDatabase,
     SplashScreen,
     AuthService,
+    FCM,
     UserService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HospitalServiceProvider
+    BarcodeScanner,    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HospitalServiceProvider,
+    TokenServiceProvider
   ]
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+import { ProfilePage } from './../profile/profile';
 import { HospitalLoginPage } from './../hospital-login/hospital-login';
 import { Component } from '@angular/core';
 import { NavController, ToastController, LoadingController } from 'ionic-angular';
@@ -23,6 +24,8 @@ export class LoginPage {
   onSubmit(data) {
     //console.log(data);
     this.authservice.login(data.email,data.password,data.role);
+    this.navCtrl.push(ProfilePage);
+    
 
   }
   onIn(data) {

@@ -39,6 +39,15 @@ export class AuthService{
         
         //this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
       }
+      sin(data)
+      {
+        var c=this.afAuth.auth.currentUser.uid;
+        this.userService.brave(c,50);
+      }
+      getReward()
+      {
+        return this.userService.getRew(this.afAuth.auth.currentUser.uid);
+      }
     //   logout() { 
     //     this.afAuth.auth.signOut();
     //   }

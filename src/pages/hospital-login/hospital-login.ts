@@ -1,3 +1,4 @@
+import { HospitalHomePage } from './../hospital-home/hospital-home';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -26,7 +27,7 @@ export class HospitalLoginPage {
   hospIn(data)
   {
     this.authS.signin(data.email,data.password);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HospitalHomePage);
     
   }
 
