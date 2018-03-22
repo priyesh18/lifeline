@@ -14,13 +14,10 @@
 
 
 <ion-content padding>
-    <input 
-    #query
-    (keyup)="filter(query.value)"
-    type="text" class="form-control" placeholder="Search...">
-    <ion-list>
-        <button ion-item *ngFor="let i of c">
-          {{ i }}
+    <ion-list no-lines>
+        <button ion-item *ngFor="let g of c;let i=index" (click)="showInfo(i)">
+          
+          {{ g}}
         </button> 
       </ion-list>
       

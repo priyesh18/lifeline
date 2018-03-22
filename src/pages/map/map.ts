@@ -3,12 +3,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the MapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 declare var google;
 let map: any;
 let infowindow: any;
@@ -26,6 +21,7 @@ let options = {
 export class MapPage {
   lat;
   lng;
+  addarray=[];
   locationChosen=false;
   listarray=[];
 
@@ -78,7 +74,7 @@ export class MapPage {
       }); 
       this.createM( 19.0813,72.8887);
   
-      infowindow = new google.maps.InfoWindow();
+      infowindow = new google.maps.InfoWindow({maxWidth:300});
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
         location: {lat: 19.0813, lng:72.8887 },
@@ -96,22 +92,13 @@ export class MapPage {
     }, options);
     //var myplace = {lat: -33.8665, lng: 151.1956};
   }
-  // addMarker()
-  // {
-  //   var marker=new google.maps.Marker({
-  //     map:map,
-  //     animation:'DROP',
-  //     position: {lat: 19.0813, lng:72.8887 },
-      
-  //     icon:'blue'
-
-  //   });
-  //   console.log()
-  // }
+  
   createMarker(place) {
     console.log(place);
     var placeLoc = place.geometry.location;
     var hosname=place.name;
+    var hosadd=place.vicinity;
+    this.addarray.push(hosadd);
     console.log(hosname);
     this.listarray.push(hosname);
     var marker = new google.maps.Marker({
@@ -120,7 +107,7 @@ export class MapPage {
     });
   
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
+      infowindow.setContent('<div><strong>'+place.name+'</strong><br>'+place.vicinity+'<br>'+'<strong>Rating: '+place.rating+'</strong><br>'+'</div>');
       infowindow.open(map, this);
     });
   }
@@ -141,7 +128,7 @@ export class MapPage {
 
   listShow()
   {
-    this.navCtrl.push(ListPage,{array:this.listarray});
+    this.navCtrl.push(ListPage,{array1:this.listarray, array2:this.addarray});
   }
   
 

@@ -14,12 +14,13 @@
 
 
 <ion-content padding>
-    <div #map id="map"></div>
     
 
 
-  <button ion-button round  (click)="initMap()">Locate Me</button>
-  <button ion-button round  (click)="listShow()">Show list</button>
+  <button ion-button round block (click)="initMap()">Locate Me</button>
+  <button ion-button round block  (click)="listShow()">Show list</button>
+  <div #map id="map"></div>
+
 
 
 </ion-content>

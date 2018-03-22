@@ -1,3 +1,4 @@
+import { HospitalInfoPage } from './../pages/hospital-info/hospital-info';
 import { HospitalProfilePage } from './../pages/hospital-profile/hospital-profile';
 import { QrCodePage } from './../pages/qr-code/qr-code';
 import { HospitalHomePage } from './../pages/hospital-home/hospital-home';
@@ -43,6 +44,7 @@ import { HospdataProvider } from '../providers/hospdata/hospdata';
     QrCodePage,
     InstructionsPage,
     UserLoginPage,
+    HospitalInfoPage,
     HospitalProfilePage,
     HospitalLoginPage
   ],
@@ -66,6 +68,7 @@ import { HospdataProvider } from '../providers/hospdata/hospdata';
     ListPage,
     QrCodePage,
     LoginPage,
+    HospitalInfoPage,
     InstructionsPage,
     HospitalProfilePage,
     UserLoginPage,
