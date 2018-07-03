@@ -1,17 +1,11 @@
 import { QrCodePage } from './../qr-code/qr-code';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http/';
 import { HttpHeaders } from '@angular/common/http';
 
-/**
- * Generated class for the HospitalHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
+
 @Component({
   selector: 'page-hospital-home',
   templateUrl: 'hospital-home.html',

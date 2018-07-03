@@ -14,8 +14,7 @@ import { AuthService } from '../../providers/auth.service';
 export class LoginPage {
 
   constructor(public navCtrl: NavController,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
+    
   private authservice:AuthService) {
 
   }
