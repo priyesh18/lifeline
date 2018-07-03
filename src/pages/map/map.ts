@@ -13,7 +13,6 @@ let options = {
   maximumAge: 0
 };
 
-@IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
@@ -68,16 +67,16 @@ export class MapPage {
     navigator.geolocation.getCurrentPosition((location) => {
       console.log(location);
       map = new google.maps.Map(this.mapElement.nativeElement, {
-        center: {lat: 19.0813, lng: 72.8887
+        center: {lat: 19.1076, lng:72.8373
         },
         zoom: 14
       }); 
-      this.createM( 19.0813,72.8887);
+      this.createM( 19.1076,72.8373);
   
       infowindow = new google.maps.InfoWindow({maxWidth:300});
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
-        location: {lat: 19.0813, lng:72.8887 },
+        location: {lat: 19.1076, lng:72.8373 },
         radius: 1000,
         type: ['hospital'],
       }, (results,status) => {

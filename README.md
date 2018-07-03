@@ -32,6 +32,20 @@ clone the repo
 cd in the folder   
 `cd lifeline`   
 run `npm install`   
+make a file in `src/environments/environment.ts` make a const and substitute your details
+```
+export const environment = {
+    production: false,
+    firebase: {
+        apiKey: "yourkey",
+        authDomain: "hospital-1641d.firebaseapp.com",
+        databaseURL: "your url",
+        projectId: "id",
+        storageBucket: "",
+        messagingSenderId: "yourid"
+      }
+  };
+```
 Start the development server   
 `ionic serve`  
  build the app using  

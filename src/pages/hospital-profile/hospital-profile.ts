@@ -1,5 +1,4 @@
 import { HospdataProvider } from './../../providers/hospdata/hospdata';
-import { HospitalProfilePageModule } from './hospital-profile.module';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
